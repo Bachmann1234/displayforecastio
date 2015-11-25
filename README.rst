@@ -21,11 +21,11 @@ This app takes two args. A latitude and a longitude. Example usage with output i
     Currently: rain - Drizzle on Saturday and Tuesday, with temperatures peaking at 59°F on Friday.
 
 
-Setting up a development environment. I assume the latest python is installed
+Setting up a development environment. I assume python 3.5.0 is installed
 
 .. code:: bash
 
-    virtualenv venv
+    pyvenv venv
     source venv/bin/activate
     pip install -r requirements.txt
 

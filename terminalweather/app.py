@@ -52,11 +52,13 @@ def main():
     try:
         key = os.environ[FORECAST_DEV_KEY_VAR]
     except KeyError:
-        print ("I'm sorry. You need a forecast.io dev key defined as "
-               "an an environment variable: {}").format(
-            FORECAST_DEV_KEY_VAR
+        print(
+            "I'm sorry. You need a forecast.io dev key defined as "
+            "an an environment variable: {}".format(
+                FORECAST_DEV_KEY_VAR
+            )
         )
-        print "You can register for one here: https://developer.forecast.io/"
+        print("You can register for one here: https://developer.forecast.io/")
         return -1
 
-    print format_weather(get_weather(key, args.lat, args.long))
+    print(format_weather(get_weather(key, args.lat, args.long)))
