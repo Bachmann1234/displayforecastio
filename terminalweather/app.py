@@ -1,5 +1,3 @@
-import sys
-
 import os
 import argparse
 
@@ -35,7 +33,9 @@ def get_weather(key, lat, long):
         A dictionary of the api response
     """
     # todo: some error handling would be nice
-    return requests.get("https://api.forecast.io/forecast/{}/{},{}".format(key, lat, long)).json()
+    return requests.get(
+        "https://api.forecast.io/forecast/{}/{},{}".format(key, lat, long)
+    ).json()
 
 
 def main():
@@ -52,14 +52,11 @@ def main():
     try:
         key = os.environ[FORECAST_DEV_KEY_VAR]
     except KeyError:
-        print "I'm sorry. You need a forecast.io dev key defined as an an environment variable: {}".format(
+        print ("I'm sorry. You need a forecast.io dev key defined as "
+               "an an environment variable: {}").format(
             FORECAST_DEV_KEY_VAR
         )
         print "You can register for one here: https://developer.forecast.io/"
         return -1
 
     print format_weather(get_weather(key, args.lat, args.long))
-
-
-if __name__ == '__main__':
-    sys.exit(main())
