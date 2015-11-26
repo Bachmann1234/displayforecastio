@@ -25,9 +25,10 @@ Setting up a development environment. I assume python 3.5.0 is installed. Though
 
 .. code:: bash
 
-    pyvenv venv
+    virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt
+    pip install -r test-requirements.txt
 
 Run the tests to ensure this all worked try running the tests. Like running the app one test requires the `FORCAST_API`
 environment variable to be set
