@@ -1,4 +1,5 @@
 import os
+import sys
 import argparse
 
 import requests
@@ -38,17 +39,20 @@ def get_weather(key, lat, long):
     ).json()
 
 
-def main():
+def main(args):
     parser = argparse.ArgumentParser(description='Print the weather')
     parser.add_argument(
-        'lat', type=float,
-        help='an integer for the accumulator'
+        'latitude', type=float,
+        help='latitude is a float providing a partial position on a map. '
+             'This combined with longitudg will tell us where to get the weather'
     )
     parser.add_argument(
-        'long', type=float,
-        help='an integer for the accumulator'
+        'longitude', type=float,
+        help='Longitude is a float providing a partial position on a map. '
+             'This combined with long will tell us where to get the weather'
+             'from'
     )
-    args = parser.parse_args()
+    args = parser.parse_args(args)
     try:
         key = os.environ[FORECAST_DEV_KEY_VAR]
     except KeyError:
@@ -61,4 +65,7 @@ def main():
         print("You can register for one here: https://developer.forecast.io/")
         return -1
 
-    print(format_weather(get_weather(key, args.lat, args.long)))
+    print(format_weather(get_weather(key, args.latitude, args.longitude)))
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
