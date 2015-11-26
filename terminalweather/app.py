@@ -8,12 +8,13 @@ FORECAST_DEV_KEY_VAR = "FORECAST_API"
 
 
 def format_weather(weather_dict):
-    """
-    Make the weather pretty for the terminal
-    :param weather_dict:
-        Dict with an api response from the forcast.io api
-    :return:
-        String summarizing the current weather
+    """Make the weather pretty for the terminal
+
+    Args:
+        weather_dict (dict): Dict with an api response
+        from the forcast.io api
+
+    Returns: String summarizing the current weather
     """
     return u"Currently: {} - {}".format(
         weather_dict['daily']['icon'],
@@ -22,16 +23,15 @@ def format_weather(weather_dict):
 
 
 def get_weather(key, lat, long):
-    """
-    Call our api to get the weather
-    :param key:
-        str - ForcastIO api key
-    :param lat:
-        float - Latitude
-    :param long:
-        float - Longitude
-    :return:
-        A dictionary of the api response
+    """Call our api to get the weather
+
+    Args:
+        key (str): ForcastIO api key
+        lat (float): Latitude
+        long (float): Longitude
+
+    Returns:
+        dict: The api response
     """
     # todo: some error handling would be nice
     return requests.get(
