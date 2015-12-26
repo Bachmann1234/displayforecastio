@@ -12,12 +12,17 @@ To work it assumes you have the `FORECAST_API` environment variable set to be yo
 
     export FORECAST_API="<your key here>"
 
+Installation:
+
+.. code:: bash
+
+    pip install terminalweather
 
 This app takes two args. A latitude and a longitude. Example usage with output is below
 
 .. code:: python
 
-    python terminalweather/app.py 42.3907 -71.1157
+    terminalweather 42.3907 -71.1157
     Currently: rain - Drizzle on Saturday and Tuesday, with temperatures peaking at 59°F on Friday.
 
 

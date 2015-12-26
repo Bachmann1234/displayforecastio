@@ -67,5 +67,12 @@ def main(args):
 
     print(format_weather(get_weather(key, args.latitude, args.longitude)))
 
-if __name__ == '__main__':
+
+# Run is the entry point for the runnable script
+# Main is for if you run this python script directly
+
+def run():
     sys.exit(main(sys.argv[1:]))
+
+if __name__ == '__main__':
+    run()
