@@ -1,6 +1,6 @@
 import os
 from mock import patch
-from terminalweather.app import (
+from displayforecastio.app import (
     FORECAST_DEV_KEY_VAR, main, format_weather, get_weather
 )
 
@@ -13,7 +13,7 @@ def test_no_key(monkeypatch):
 
 def test_weather_called_correctly(monkeypatch):
     monkeypatch.setenv(FORECAST_DEV_KEY_VAR, "IamaKey")
-    with patch('terminalweather.app.get_weather') as get_weather_mock:
+    with patch('displayforecastio.app.get_weather') as get_weather_mock:
         main(['4.3', '4'])
         get_weather_mock.assert_called_with('IamaKey', 4.3, 4)
 

@@ -16,13 +16,13 @@ Installation:
 
 .. code:: bash
 
-    pip install terminalweather
+    pip install displayforcastio
 
 This app takes two args. A latitude and a longitude. Example usage with output is below
 
 .. code:: python
 
-    terminalweather 42.3907 -71.1157
+    forecastio 42.3907 -71.1157
     Currently: rain - Drizzle on Saturday and Tuesday, with temperatures peaking at 59°F on Friday.
 
 
