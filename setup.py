@@ -1,18 +1,16 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
-REQUIREMENTS = [line.strip() for line in
-                open("requirements.txt").readlines()]
 setup(
     name='displayforecastio',
-    version='1.0',
+    version='1.2',
     author='Matt Bachmann',
     url='https://github.com/Bachmann1234/displayforecastio',
     description='Display the current weather in your terminal',
     license='Apache 2.0',
-    packages=['displayforecastio'],
-    install_requires=REQUIREMENTS,
+    packages=find_packages(),
+    install_requires=['requests==2.8.1'],
     entry_points={
         'console_scripts': ['forecastio = displayforecastio.app:run'],
     }
