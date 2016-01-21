@@ -1,6 +1,9 @@
 Terminal Weather
 ================
 
+This project served as the example for this `Boston Python Talk
+<https://goo.gl/7T0CMP>`_
+
 Display the weather in your terminal!
 
 This project is designed to show off a standard python project structure
