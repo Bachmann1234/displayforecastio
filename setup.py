@@ -10,7 +10,7 @@ setup(
     description='Display the current weather in your terminal',
     license='Apache 2.0',
     packages=find_packages(),
-    install_requires=['requests==2.31.0'],
+    install_requires=['requests==2.32.0'],
     entry_points={
         'console_scripts': ['forecastio = displayforecastio.app:run'],
     }
